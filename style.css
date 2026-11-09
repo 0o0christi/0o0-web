@@ -1644,5 +1644,12 @@ footer {
 
 .portrait-easter-egg .lightbox-close {
     background: transparent;
+    border: 0;
     border-radius: 0;
+    outline: none;
+    box-shadow: none;
+}
+
+.portrait-easter-egg .lightbox-close:focus-visible {
+    opacity: 0.5;
 }
