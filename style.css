@@ -1650,6 +1650,12 @@ footer {
     box-shadow: none;
 }
 
-.portrait-easter-egg .lightbox-close:focus-visible {
-    opacity: 0.5;
+.portrait-easter-egg .lightbox-close {
+    color: #fff;
+    opacity: 1;
+}
+
+.portrait-easter-egg .lightbox-close:hover {
+    color: #808080;
+    opacity: 1;
 }
