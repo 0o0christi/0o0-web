@@ -1522,3 +1522,23 @@ footer {
         margin-bottom: 38px;
     }
 }
+
+/* Keep the footer at the bottom of the screen on phones. */
+@media (max-width: 650px) {
+    .home-page .site-footer,
+    .portfolio-page .site-footer,
+    .about-page .site-footer,
+    .contact-page .site-footer {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 20;
+        padding-bottom: calc(30px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .home-main {
+        padding-bottom: 120px;
+    }
+}
+
