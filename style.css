@@ -69,6 +69,10 @@ input {
    ========================================== */
 
 .brand {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
     flex-shrink: 0;

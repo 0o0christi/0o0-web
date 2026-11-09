@@ -273,3 +273,19 @@ if (window.location.pathname.endsWith("printmaking.html")) {
 
     }
 }
+
+
+/* Play the cat sound when the logo is activated. */
+const logoButton = document.querySelector("button.brand");
+
+if (logoButton) {
+    const logoSound = new Audio("images/sounds/cat.mp3");
+    logoSound.preload = "none";
+
+    logoButton.addEventListener("click", () => {
+        logoSound.currentTime = 0;
+        logoSound.play().catch((error) => {
+            console.warn("The logo sound could not play.", error);
+        });
+    });
+}
