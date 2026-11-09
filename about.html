@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="About Christina Neofytou, her artistic practice, statement and CV."
+    >
+
+    <title>About &#8212; 0o0</title>
+
+    <link rel="icon" type="image/png" href="images/logo.png?v=3d9770f2">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="portrait-ascii.js" defer></script>
+</head>
+
+<body class="about-page">
+
+    <div class="about-portrait-background about-ascii-portrait" aria-hidden="true">
+        <canvas class="about-portrait-ascii"></canvas>
+        <canvas class="about-portrait-trail"></canvas>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <!-- LOGO -->
+        <a class="brand" href="index.html">
+            <img src="images/logo.png?v=3d9770f2" alt="Christina Neofytou home" width="40" height="40">
+        </a>
+
+        <!-- NAVIGATION -->
+        <nav class="site-nav" aria-label="Main navigation">
+
+            <a href="index.html">main</a>
+
+            <!-- PORTFOLIO DROPDOWN -->
+            <div class="dropdown">
+
+                <a
+                    class="dropdown-toggle"
+                    href="portfolio.html"
+                    aria-haspopup="true"
+                    aria-controls="portfolio-menu"
+                >
+                    portfolio
+                    <span class="chevron"></span>
+                </a>
+
+                <div class="dropdown-menu" id="portfolio-menu">
+                    <a href="paintings.html">paintings</a>
+                    <a href="printmaking.html">printmaking</a>
+                    <a href="3d.html">3D</a>
+                </div>
+
+            </div>
+
+            <a href="about.html" class="active" aria-current="page">about</a>
+            <a href="contact.html">contact</a>
+
+
+        </nav>
+
+        <!-- SEARCH FORM -->
+        <form class="search-form" role="search" hidden>
+
+            <input
+                type="search"
+                placeholder="Search pages"
+                aria-label="Search pages"
+            >
+
+            <button type="submit">Search</button>
+
+        </form>
+
+    </header>
+
+    <main class="about-main">
+
+        <div class="about-title-row">
+            <h1>ABOUT</h1>
+            <h2>0O0</h2>
+        </div>
+
+        <section class="about-editorial-section about-statement" aria-labelledby="artist-statement-title">
+            <h2 id="artist-statement-title">ARTIST STATEMENT</h2>
+            <div class="about-section-copy">
+                <p>My artistic practice consists of oil painting, woodcut printmaking, and digital 3D modelling, with painting being the space where I find myself most often.</p>
+
+                <p>Working primarily from photographs I take myself, I collect fragments of my surroundings and reinterpret them through painting. Rather than attempting to faithfully reproduce an image, I allow the process to develop intuitively, leaving room for personal interpretation, change, and uncertainty.</p>
+
+                <p>A recurring characteristic of my paintings is their unfinished state. For a long time, I regarded this as a weakness in my practice, something that reflected an inability to bring a work to completion. Over time, however, I began to reconsider what it means for something to be finished.</p>
+
+                <p>I have come to understand this incompleteness as something closely connected to my experience of life itself. Things do not always arrive at a clear conclusion, and perhaps they do not need to. What I once considered a shortcoming has gradually become a meaningful part of my visual language.</p>
+
+                <p>My work exists somewhere between the desire to create something complete and the acceptance of leaving things unresolved. Perhaps my paintings are not unfinished after all. Perhaps they simply end where I no longer need to continue.</p>
+            </div>
+        </section>
+
+        <section class="about-editorial-section about-cv" aria-labelledby="cv-title">
+            <h2 id="cv-title">CV</h2>
+            <div class="about-cv-content">
+                <section class="about-cv-group" aria-labelledby="cv-education">
+                    <h3 id="cv-education">EDUCATION</h3>
+                    <ul>
+                        <li>2021-2022 Art Courses at 7Arts Art Lab by DeVineKaryou</li>
+                        <li>2022-2027 MFA (Master of Fine Arts) at University of Ioannina (Expected in 2027)</li>
+                    </ul>
+                </section>
+
+                <section class="about-cv-group" aria-labelledby="cv-exhibitions">
+                    <h3 id="cv-exhibitions">GROUP EXHIBITIONS</h3>
+                    <ul>
+                        <li>2021 Blooming Artist Exhibition at 3Angels Modern Art Gallery</li>
+                        <li>2025 Nominated for the WSA Painting Prize Exhibition at the Winchester Gallery</li>
+                        <li>2026 Unbound Exhibition at 3Angels Modern Art Gallery</li>
+                    </ul>
+                </section>
+
+                <section class="about-cv-group" aria-labelledby="cv-practice">
+                    <h3 id="cv-practice">ARTISTIC PRACTICE</h3>
+                    <ul>
+                        <li>Oil painting</li>
+                        <li>Woodcut printmaking</li>
+                        <li>Digital 3D modelling</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <span>&#169; All rights reserved.</span>
+        <span>0o0</span>
+    </footer>
+
+</body>
+</html>
