@@ -1618,3 +1618,26 @@ footer {
         z-index: 2;
     }
 }
+
+
+/* About portrait revealed by the desktop keyboard code. */
+.portrait-easter-egg {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    max-width: none;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: 24px;
+    border: 0;
+    background: rgba(0, 0, 0, 0.95);
+    color: #fff;
+}
+
+.portrait-easter-egg[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
