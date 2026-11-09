@@ -14,8 +14,8 @@
     <title>Paintings — 0o0</title>
 
     <link rel="icon" type="image/png" href="images/logo.png?v=3d9770f2">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css?v=touch-nav-20261109">
+    <script src="script.js?v=touch-nav-20261109" defer></script>
     <script src="portrait-ascii.js?v=homepage-mask-2" defer></script>
 </head>
 
@@ -43,12 +43,12 @@
                 <a
                     class="dropdown-toggle active"
                     href="portfolio.html"
-                    aria-haspopup="true"
-                    aria-controls="portfolio-menu"
                 >
                     portfolio
-                    <span class="chevron"></span>
                 </a>
+                <button class="dropdown-arrow" type="button" aria-label="Open portfolio pages" aria-expanded="false" aria-controls="portfolio-menu">
+                    <span class="chevron" aria-hidden="true"></span>
+                </button>
 
                 <div class="dropdown-menu" id="portfolio-menu">
                     <a href="paintings.html" aria-current="page">paintings</a>

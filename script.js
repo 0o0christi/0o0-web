@@ -11,6 +11,46 @@
 const searchButton = document.querySelector(".search-toggle");
 const searchForm = document.querySelector(".search-form");
 const searchInput = searchForm?.querySelector('input[type="search"]');
+const portfolioDropdowns = document.querySelectorAll(".dropdown");
+
+function setPortfolioDropdownOpen(dropdown, isOpen) {
+    const arrowButton = dropdown.querySelector(".dropdown-arrow");
+
+    dropdown.classList.toggle("is-open", isOpen);
+    arrowButton?.setAttribute("aria-expanded", String(isOpen));
+    arrowButton?.setAttribute(
+        "aria-label",
+        isOpen ? "Close portfolio pages" : "Open portfolio pages"
+    );
+}
+
+portfolioDropdowns.forEach((dropdown) => {
+    const arrowButton = dropdown.querySelector(".dropdown-arrow");
+
+    arrowButton?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const shouldOpen = !dropdown.classList.contains("is-open");
+
+        portfolioDropdowns.forEach((otherDropdown) => {
+            setPortfolioDropdownOpen(otherDropdown, false);
+        });
+
+        if (shouldOpen) {
+            setPortfolioDropdownOpen(dropdown, true);
+        }
+    });
+});
+
+document.addEventListener("click", (event) => {
+    const clickedInsideDropdown = event.target instanceof Element
+        && event.target.closest(".dropdown");
+
+    if (!clickedInsideDropdown) {
+        portfolioDropdowns.forEach((dropdown) => {
+            setPortfolioDropdownOpen(dropdown, false);
+        });
+    }
+});
 
 /* ==========================================
    SEARCH TOGGLE
@@ -100,6 +140,10 @@ if (searchForm && searchInput) {
 document.addEventListener("keydown", (event) => {
 
     if (event.key === "Escape") {
+        portfolioDropdowns.forEach((dropdown) => {
+            setPortfolioDropdownOpen(dropdown, false);
+        });
+
         // Close search
         if (searchForm && searchButton) {
 
