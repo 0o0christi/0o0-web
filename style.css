@@ -1618,30 +1618,3 @@ footer {
         z-index: 2;
     }
 }
-
-@media (min-width: 651px) and (any-pointer: coarse) {
-    .home-page .site-footer {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 20;
-        padding-bottom: calc(30px + env(safe-area-inset-bottom, 0px));
-    }
-
-    .home-main {
-        padding-bottom: 120px;
-    }
-
-    .home-page .hero-art {
-        position: fixed;
-        right: 0;
-        bottom: calc(73px + env(safe-area-inset-bottom, 0px));
-        left: 0;
-        z-index: 2;
-        height: calc(100vh - 223px - env(safe-area-inset-bottom, 0px));
-        height: calc(100dvh - 223px - env(safe-area-inset-bottom, 0px));
-        object-fit: contain;
-        object-position: center bottom;
-    }
-}
