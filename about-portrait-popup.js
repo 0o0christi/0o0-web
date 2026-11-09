@@ -22,7 +22,7 @@ if (portraitPopup) {
         }
 
         if (event.key === "Enter") {
-            if (typedCode.trim().endsWith("0o0/")) {
+            if (typedCode.trim().endsWith("0o0")) {
                 event.preventDefault();
                 previousOverflow = document.body.style.overflow;
                 portraitPopup.showModal();
