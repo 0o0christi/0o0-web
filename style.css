@@ -1641,3 +1641,8 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
+.portrait-easter-egg .lightbox-close {
+    background: transparent;
+    border-radius: 0;
+}
