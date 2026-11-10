@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Studio updates, works in progress and events from 0o0.">
+    <title>Blog — 0o0</title>
+    <link rel="icon" type="image/png" href="images/logo.png?v=3d9770f2">
+    <link rel="stylesheet" href="style.css?v=blog-20261110">
+    <script src="script.js?v=logo-sound-20261109" defer></script>
+    <script src="blog.js?v=1" defer></script>
+</head>
+<body class="blog-page">
+    <header class="site-header">
+
+        <!-- LOGO -->
+        <button class="brand" type="button" aria-label="Play cat sound">
+            <img src="images/logo.png?v=3d9770f2" alt="0o0 logo" width="40" height="40">
+        </button>
+
+        <!-- NAVIGATION -->
+        <nav class="site-nav" aria-label="Main navigation">
+
+            <a href="index.html">main</a>
+            <a href="blog.html" class="active" aria-current="page">blog</a>
+
+            <!-- PORTFOLIO DROPDOWN -->
+            <div class="dropdown">
+
+                <a
+                    class="dropdown-toggle"
+                    href="portfolio.html"
+                >
+                    portfolio
+                </a>
+                <button class="dropdown-arrow" type="button" aria-label="Open portfolio pages" aria-expanded="false" aria-controls="portfolio-menu">
+                    <span class="chevron" aria-hidden="true"></span>
+                </button>
+
+                <div class="dropdown-menu" id="portfolio-menu">
+                    <a href="paintings.html">paintings</a>
+                    <a href="printmaking.html">printmaking</a>
+                    <a href="3d.html">3D</a>
+                </div>
+
+            </div>
+
+            <a href="about.html">about</a>
+            <a href="contact.html">contact</a>
+
+
+        </nav>
+
+        <!-- SEARCH FORM -->
+        <form class="search-form" role="search" hidden>
+
+            <input
+                type="search"
+                placeholder="Search pages"
+                aria-label="Search pages"
+            >
+
+            <button type="submit">Search</button>
+
+        </form>
+
+    </header>
+
+    <main class="blog-main">
+        <h1>BLOG</h1>
+        <div class="blog-feed">
+            <!-- Add new posts above older posts. Give each post its own permanent id. -->
+            <article class="blog-post" id="sample-post" aria-labelledby="sample-post-title">
+                <p class="blog-post-meta">0o0 · sample post</p>
+                <h2 id="sample-post-title">Sample update</h2>
+                <p class="blog-post-copy">This is a sample post showing how updates will appear in the feed. Future posts can include works in progress, studio notes, and upcoming events.</p>
+                <button class="blog-share-button" type="button" aria-label="Share sample update">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M12 16V3m-5 5 5-5 5 5M5 13v7h14v-7" />
+                    </svg>
+                    share
+                </button>
+                <p class="blog-share-status" role="status"></p>
+                <div class="blog-share-link" hidden>
+                    <label for="sample-post-link">post link</label>
+                    <input id="sample-post-link" type="text" readonly>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <span>&#169; All rights reserved.</span>
+        <span>0o0</span>
+    </footer>
+</body>
+</html>
