@@ -1711,6 +1711,8 @@ footer {
 }
 
 .blog-share-button {
+    min-width: 44px;
+    justify-content: center;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -1774,57 +1776,4 @@ footer {
     width: 100%;
     height: auto;
     margin: 0 0 24px;
-}
-
-
-.blog-share-controls {
-    position: relative;
-    width: fit-content;
-}
-
-.blog-share-panel {
-    position: absolute;
-    bottom: calc(100% + 8px);
-    left: 0;
-    z-index: 10;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 300px;
-    max-width: calc(100vw - 32px);
-    padding: 16px;
-    gap: 4px 16px;
-    border: 1px solid #555;
-    background: #000;
-    color: #fff;
-}
-
-.blog-share-panel[hidden] {
-    display: none;
-}
-
-.blog-share-panel p {
-    grid-column: 1 / -1;
-    margin: 0 0 8px;
-    color: #a6a6a6;
-    font-size: 12px;
-}
-
-.blog-share-panel button,
-.blog-share-panel a {
-    display: flex;
-    align-items: center;
-    min-height: 44px;
-    padding: 8px 0;
-    border: 0;
-    background: transparent;
-    color: #fff;
-    font: inherit;
-    font-size: 14px;
-    text-align: left;
-    cursor: pointer;
-}
-
-.blog-share-panel button:hover,
-.blog-share-panel a:hover {
-    color: #a6a6a6;
 }
