@@ -1768,3 +1768,10 @@ footer {
         padding-top: 150px;
     }
 }
+
+.blog-post-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 0 24px;
+}
