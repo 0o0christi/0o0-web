@@ -1619,7 +1619,6 @@ footer {
     }
 }
 
-
 /* About portrait revealed by the desktop keyboard code. */
 .portrait-easter-egg {
     position: fixed;
@@ -1641,7 +1640,6 @@ footer {
     align-items: center;
     justify-content: center;
 }
-
 .portrait-easter-egg .lightbox-close {
     background: transparent;
     border: 0;
@@ -1659,8 +1657,6 @@ footer {
     color: #808080;
     opacity: 1;
 }
-
-
 /* BLOG FEED */
 .blog-page {
     min-height: 100vh;
@@ -1778,7 +1774,6 @@ footer {
     margin: 0 0 24px;
 }
 
-
 /* Graphic design placeholders use the existing gallery image frames. */
 .graphic-design-placeholder {
     display: flex;
@@ -1787,7 +1782,6 @@ footer {
     color: #a6a6a6;
     font-size: 13px;
 }
-
 /* Gestures affect opened images while their popup is visible. */
 .zoomable-popup {
     overflow: hidden;

@@ -274,7 +274,6 @@ if (window.location.pathname.endsWith("printmaking.html")) {
     }
 }
 
-
 /* Play the cat sound when the logo is activated. */
 const logoButton = document.querySelector("button.brand");
 
