@@ -1787,3 +1787,17 @@ footer {
     color: #a6a6a6;
     font-size: 13px;
 }
+
+/* Gestures affect opened images while their popup is visible. */
+.zoomable-popup {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: contain;
+}
+
+.zoomable-image {
+    transform-origin: center;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
