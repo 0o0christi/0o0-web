@@ -1777,3 +1777,13 @@ footer {
     height: auto;
     margin: 0 0 24px;
 }
+
+
+/* Graphic design placeholders use the existing gallery image frames. */
+.graphic-design-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a6a6a6;
+    font-size: 13px;
+}
