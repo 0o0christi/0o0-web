@@ -24,6 +24,12 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v6
+      - name: Restore the original Project 01 video
+        run: |
+          mkdir -p videos
+          cat .github/video-parts/project-01.mp4.part-* > videos/project-01.mp4
+          test "$(git hash-object --no-filters videos/project-01.mp4)" = "a765b267dbda0980144ede16505f534650f30e95"
+          rm .github/video-parts/project-01.mp4.part-*
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload site files
