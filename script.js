@@ -288,3 +288,32 @@ if (logoButton) {
         });
     });
 }
+
+/* Align portfolio category rows with the page title and About navigation link. */
+const portfolioCategoryGrid = document.querySelector(".portfolio-grid");
+const portfolioPageTitle = document.querySelector(".portfolio-main > h1");
+const aboutNavLabel = document.querySelector('.site-nav > a[href="about.html"]');
+const portfolioMain = document.querySelector(".portfolio-main");
+
+if (portfolioCategoryGrid && portfolioPageTitle && aboutNavLabel && portfolioMain) {
+    const alignPortfolioCategories = () => {
+        const mainLeft = portfolioMain.getBoundingClientRect().left;
+        const titleLeft = portfolioPageTitle.getBoundingClientRect().left;
+        const aboutRight = aboutNavLabel.getBoundingClientRect().right;
+        const rowWidth = aboutRight - titleLeft;
+
+        if (rowWidth > 0) {
+            portfolioCategoryGrid.style.marginLeft = `${titleLeft - mainLeft}px`;
+            portfolioCategoryGrid.style.width = `${rowWidth}px`;
+        }
+    };
+
+    alignPortfolioCategories();
+    window.addEventListener("resize", alignPortfolioCategories);
+
+    if ("ResizeObserver" in window) {
+        const portfolioHeaderObserver = new ResizeObserver(alignPortfolioCategories);
+        portfolioHeaderObserver.observe(document.querySelector(".site-header"));
+    }
+}
+

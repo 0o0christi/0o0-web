@@ -93,14 +93,58 @@ input {
 .site-nav {
     display: flex;
     align-items: center;
-
-    gap: 28px;
-
+    gap: 3px;
+    max-width: 100%;
+    padding: 2px 4px;
+    border-radius: 0;
+    background: #edf2f7;
+    color: #000;
     font-size: 16px;
 }
 
-.site-nav > a.active {
+.site-nav > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 14px;
+    border-radius: 0;
+    color: inherit;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-nav > a.active,
+.site-nav .dropdown:has(.dropdown-toggle.active) {
+    background: #000;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+}
+
+.site-nav > a.active,
+.site-nav .dropdown-toggle.active {
     font-weight: 700;
+}
+
+.site-nav .dropdown {
+    align-items: center;
+    gap: 0;
+    min-height: 40px;
+    padding: 0 4px 0 14px;
+    border-radius: 0;
+    color: inherit;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-nav .dropdown-toggle {
+    padding: 6px 0;
+    color: inherit;
+}
+
+.site-nav .dropdown-arrow {
+    min-height: 40px;
+    padding: 6px 3px;
+    color: inherit;
 }
 
 .site-nav a:hover,
@@ -181,6 +225,7 @@ input {
     min-width: 145px;
 
     background: #000;
+    color: #fff;
 
     padding: 10px 12px;
 }
@@ -401,11 +446,27 @@ footer {
     /* NAVIGATION */
 
     .site-nav {
-        gap: 16px;
-
+        gap: 4px;
         flex-wrap: wrap;
-
         font-size: 13px;
+        padding: 2px 3px;
+    }
+
+    .site-nav > a {
+        min-height: 34px;
+        padding: 0 9px;
+    }
+
+    .site-nav .dropdown {
+        min-height: 34px;
+        padding-left: 9px;
+        padding-right: 3px;
+    }
+
+    .site-nav .dropdown-arrow {
+        width: 30px;
+        min-height: 34px;
+        padding: 5px 3px;
     }
 
 
@@ -469,94 +530,64 @@ footer {
 }
 
 .portfolio-main {
-    width: min(100% - 48px, 1296px);
+    width: 100%;
     margin: 0 auto;
     padding-top: 150px;
     padding-bottom: 160px;
 }
 
-/* THREE-COLUMN GRID */
+.portfolio-main > h1 {
+    width: min(100% - 48px, 1296px);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* CATEGORY ROWS */
 
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
 }
 
 /* CATEGORY LINKS */
 
 .portfolio-category {
-    display: block;
+    display: flex;
+    align-items: center;
+    width: 100%;
     min-width: 0;
-}
-
-/* PORTFOLIO IMAGE CONTAINERS */
-
-.portfolio-image {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    background: #171717;
-    overflow: visible;
-    position: relative;
-    z-index: 1;
-}
-
-/* PORTFOLIO IMAGES */
-
-.portfolio-image img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    min-height: 108px;
+    padding: 24px 20px;
+    background: #000;
+    border: 1px solid #fff;
     transition: transform 0.35s ease;
 }
 
-/* HOVER ENLARGEMENT */
-
-.portfolio-category:hover .portfolio-image img {
+.portfolio-category:hover {
     transform: scale(1.05);
-}
-
-
-/* ARTWORK IMAGES */
-
-.portfolio-image img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
 }
 
 /* CATEGORY TITLES */
 
 .portfolio-category h2 {
-    margin: 18px 0 0;
+    margin: 0;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: -0.02em;
-}
-
-/* TABLET */
-
-@media (max-width: 900px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 }
 
 /* MOBILE */
 
 @media (max-width: 650px) {
     .portfolio-main {
-        width: calc(100% - 32px);
         padding-top: 210px;
         padding-bottom: 120px;
     }
 
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
+    .portfolio-main > h1 {
+        width: calc(100% - 32px);
     }
 }
 
@@ -610,6 +641,18 @@ footer {
 
 .artwork:hover .artwork-image img {
     transform: scale(1.05);
+}
+
+/* Keep the Graphic Design images at their natural proportions. */
+.graphic-design-page .artwork-image {
+    height: auto;
+    aspect-ratio: auto;
+    background: transparent;
+}
+
+.graphic-design-page .artwork-image img {
+    height: auto;
+    object-fit: contain;
 }
 
 /* ARTWORK TITLE */
@@ -1419,8 +1462,26 @@ footer {
     }
 
     .site-nav {
-        gap: clamp(8px, 2.7vw, 14px);
-        font-size: 13px;
+        gap: 2px;
+        font-size: 12px;
+        padding: 2px;
+    }
+
+    .site-nav > a {
+        min-height: 32px;
+        padding: 0 4px;
+    }
+
+    .site-nav .dropdown {
+        min-height: 32px;
+        padding-left: 4px;
+        padding-right: 0;
+    }
+
+    .site-nav .dropdown-arrow {
+        width: 24px;
+        min-height: 32px;
+        padding: 4px 2px;
     }
 
     .home-main,
@@ -1446,8 +1507,26 @@ footer {
     }
 
     .site-nav {
-        gap: 7px;
-        font-size: 11px;
+        gap: 1px;
+        font-size: 10px;
+        padding: 1px;
+    }
+
+    .site-nav > a {
+        min-height: 28px;
+        padding: 0 2px;
+    }
+
+    .site-nav .dropdown {
+        min-height: 28px;
+        padding-left: 2px;
+        padding-right: 0;
+    }
+
+    .site-nav .dropdown-arrow {
+        width: 20px;
+        min-height: 28px;
+        padding: 3px 1px;
     }
 
     .dropdown {
@@ -1662,6 +1741,13 @@ footer {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    isolation: isolate;
+}
+
+.blog-page .blog-main,
+.blog-page .site-footer {
+    position: relative;
+    z-index: 1;
 }
 
 .blog-main {
@@ -1671,8 +1757,94 @@ footer {
     padding: 150px 0 160px;
 }
 
+.blog-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 96px;
+}
+
+.blog-title-row h1 {
+    margin: 0;
+}
+
+/* Inspired by vinodjangid07's subscribe input on Uiverse. */
+.blog-subscribe {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: min(320px, 55%);
+    height: clamp(40px, 3.52vw, 53px);
+    padding: 4px;
+    border: 1px solid #fff;
+    background: #000;
+}
+
+.blog-subscribe input {
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 8px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font: inherit;
+    font-size: 14px;
+}
+
+.blog-subscribe input::placeholder {
+    color: #a6a6a6;
+}
+
+.blog-subscribe button {
+    display: grid;
+    place-items: center;
+    align-self: stretch;
+    flex: 0 0 auto;
+    padding: 0 12px;
+    border: 0;
+    background: #fff;
+    color: #000;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.blog-subscribe button:hover {
+    background: #bbb;
+}
+
+.blog-subscribe-icon {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    margin-left: 8px;
+    color: #bbb;
+}
+
+.blog-subscribe :focus-visible {
+    outline: 1px solid #bbb;
+    outline-offset: 2px;
+}
+
+.blog-subscribe-status {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin: 10px 0 0;
+    color: #bbb;
+    font-size: 12px;
+}
+
+.blog-subscribe-status:empty {
+    display: none;
+}
+
 .blog-feed {
-    width: min(100%, 720px);
+    display: grid;
+    gap: 80px;
+    width: min(100%, 900px);
     margin: 0 auto;
 }
 
@@ -1683,6 +1855,92 @@ footer {
 
 .blog-post:last-child {
     margin-bottom: 0;
+}
+
+.blog-post-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 260px);
+    align-items: center;
+    gap: 40px;
+    margin: 0;
+    min-height: 360px;
+    padding: 40px;
+    border: 1px solid #fff;
+    border-radius: 0;
+    background: #000;
+    color: #fff;
+    transition: transform 0.35s ease;
+}
+
+.blog-post-card:hover {
+    transform: scale(1.05);
+}
+
+.blog-post-card-content {
+    min-width: 0;
+}
+
+.blog-post-card .blog-post-meta,
+.blog-post-card .blog-share-status {
+    color: #a6a6a6;
+}
+
+.blog-post-card h2 {
+    margin: 12px 0 14px;
+    color: #fff;
+    font-size: clamp(24px, 2.7vw, 30px);
+    font-weight: 500;
+}
+
+.blog-post-card .blog-post-copy {
+    margin-bottom: 20px;
+    color: #bbb;
+    font-size: 16px;
+}
+
+.blog-post-card .blog-post-image {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    margin: 0;
+    border-radius: 0;
+    background: #111;
+    object-fit: contain;
+}
+
+.blog-post-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 18px;
+    border-radius: 0;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.blog-post-more:hover {
+    background: #bbb;
+}
+
+.blog-post-more:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+.blog-post-card .blog-share-button {
+    color: #fff;
+}
+
+.blog-post-card .blog-share-button:hover {
+    color: #a6a6a6;
+    opacity: 1;
+}
+
+.blog-post-card .blog-share-link label {
+    color: #bbb;
 }
 
 .blog-post-meta,
@@ -1755,11 +2013,11 @@ footer {
     }
 }
 
-/* Leave room for the Blog link beside the existing navigation on phones. */
+/* Keep the segmented navigation compact on phones. */
 @media (max-width: 650px) and (any-pointer: coarse) {
     .site-nav {
-        gap: clamp(5px, 1.4vw, 9px);
-        font-size: clamp(11px, 3vw, 13px);
+        gap: 2px;
+        font-size: 12px;
     }
 
     .blog-main {
@@ -1772,6 +2030,50 @@ footer {
     width: 100%;
     height: auto;
     margin: 0 0 24px;
+}
+
+.blog-post-detail {
+    width: min(100%, 720px);
+    margin: 0 auto;
+}
+
+.blog-post-detail > .blog-post-meta {
+    margin: 0 0 14px;
+}
+
+.blog-post-detail h1 {
+    margin-bottom: 28px;
+}
+
+.blog-post-detail-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 0 28px;
+}
+
+@media (max-width: 650px) {
+    .blog-post-card {
+        grid-template-columns: minmax(0, 1fr) minmax(90px, 120px);
+        gap: 16px;
+        min-height: 320px;
+        padding: 20px;
+        border-radius: 0;
+    }
+
+    .blog-post-card h2 {
+        font-size: 22px;
+    }
+
+    .blog-post-card .blog-post-copy {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .blog-post-more {
+        padding: 9px 13px;
+        font-size: 13px;
+    }
 }
 
 /* Graphic design placeholders use the existing gallery image frames. */

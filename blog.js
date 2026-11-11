@@ -1,12 +1,27 @@
+const subscribeForm = document.querySelector('.blog-subscribe');
+if (subscribeForm) {
+    subscribeForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        subscribeForm.querySelector('.blog-subscribe-status').textContent =
+            'Subscriptions are not available yet.';
+    });
+}
+
 /* Each post's permanent id gives it its own copyable link. */
 document.querySelectorAll(".blog-share-button").forEach((copyButton) => {
     const post = copyButton.closest("article");
     const status = post.querySelector(".blog-share-status");
     const linkFallback = post.querySelector(".blog-share-link");
     const linkInput = linkFallback.querySelector("input");
-    const postUrl = new URL(window.location.href);
-    postUrl.search = "";
-    postUrl.hash = post.id;
+    const postUrl = copyButton.dataset.postUrl
+        ? new URL(copyButton.dataset.postUrl, window.location.href)
+        : new URL(window.location.href);
+
+    if (!copyButton.dataset.postUrl) {
+        postUrl.search = "";
+        postUrl.hash = post.id;
+    }
+
     const url = postUrl.href;
     copyButton.title = "Copy post link — " + url;
     copyButton.dataset.postUrl = url;
