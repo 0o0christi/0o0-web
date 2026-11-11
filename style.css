@@ -553,6 +553,19 @@ footer {
 
 /* CATEGORY LINKS */
 
+@media (max-width: 1024px) {
+    .portfolio-grid {
+        width: calc(100% - 48px);
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 650px) {
+    .portfolio-grid {
+        width: calc(100% - 32px);
+    }
+}
+
 .portfolio-category {
     display: flex;
     align-items: center;

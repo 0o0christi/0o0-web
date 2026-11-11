@@ -297,6 +297,11 @@ const portfolioMain = document.querySelector(".portfolio-main");
 
 if (portfolioCategoryGrid && portfolioPageTitle && aboutNavLabel && portfolioMain) {
     const alignPortfolioCategories = () => {
+        if (window.matchMedia("(max-width: 1024px)").matches) {
+            portfolioCategoryGrid.style.removeProperty("margin-left");
+            portfolioCategoryGrid.style.removeProperty("width");
+            return;
+        }
         const mainLeft = portfolioMain.getBoundingClientRect().left;
         const titleLeft = portfolioPageTitle.getBoundingClientRect().left;
         const aboutRight = aboutNavLabel.getBoundingClientRect().right;
