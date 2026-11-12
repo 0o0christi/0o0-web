@@ -13,14 +13,15 @@
     <title>About &#8212; 0o0</title>
 
     <link rel="icon" type="image/png" href="images/logo.png?v=3d9770f2">
-    <link rel="stylesheet" href="style.css?v=navigation-thinner-20261111">
-    <script src="script.js?v=logo-sound-20261109" defer></script>
+    <link rel="stylesheet" href="style.css?v=about-lanyard-overlay-20261112">
+    <script src="script.js?v=logo-peel-undone-20261112" defer></script>
     <script src="portrait-ascii.js" defer></script>
     <script src="about-portrait-popup.js?v=1" defer></script>
     <script src="image-zoom.js?v=1" defer></script>
+    <script src="about-lanyard.bundle.js?v=16" defer></script>
 </head>
 
-<body class="about-page">
+<body class="about-page about-with-lanyard">
 
     <div class="about-portrait-background about-ascii-portrait" aria-hidden="true">
         <canvas class="about-portrait-ascii"></canvas>
@@ -93,6 +94,9 @@
 
         <section class="about-editorial-section about-statement" aria-labelledby="artist-statement-title">
             <h2 id="artist-statement-title">ARTIST STATEMENT</h2>
+            <div class="about-lanyard-slot" id="about-lanyard" role="img" aria-label="Portrait lanyard. Drag the badge to swing it; tap or click to flip it.">
+                <img class="about-lanyard-fallback" src="images/card.JPG" alt="Portrait of Christina Neofytou">
+            </div>
             <div class="about-section-copy">
                 <p>My artistic practice consists of oil painting, woodcut printmaking, and digital 3D modelling, with painting being the space where I find myself most often.</p>
 

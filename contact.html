@@ -9,8 +9,8 @@
     <title>Contact &#8212; 0o0</title>
 
     <link rel="icon" type="image/png" href="images/logo.png?v=3d9770f2">
-    <link rel="stylesheet" href="style.css?v=navigation-thinner-20261111">
-    <script src="script.js?v=logo-sound-20261109" defer></script>
+    <link rel="stylesheet" href="style.css?v=logo-peel-undone-20261112">
+    <script src="script.js?v=logo-peel-undone-20261112" defer></script>
     <script src="portrait-ascii.js?v=homepage-mask-2" defer></script>
 </head>
 
@@ -106,27 +106,33 @@
         </section>
 
         <div class="contact-details">
-            <div class="contact-links contact-copy">
-                <p>
-                    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=c0o0orts%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email c0o0orts@gmail.com in Gmail (opens in a new tab)">
-                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <rect x="3" y="5" width="18" height="14"/>
-                            <path d="m3 5 9 8 9-8"/>
-                        </svg>
-                        <span>c0o0orts@gmail.com</span>
+            <!-- Social icon row inspired by wilsondesouza's Uiverse tooltip reference. -->
+            <ul class="contact-socials" aria-label="Social links">
+                <li>
+                    <a class="social-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=c0o0orts%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Open Gmail draft to c0o0orts@gmail.com">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 6 9 7 9-7"/></svg>
                     </a>
-                </p>
-                <p>
-                    <a href="https://www.instagram.com/0o0orts/" aria-label="Instagram profile @0o0orts">
-                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                            <rect x="3" y="3" width="18" height="18" rx="5"/>
-                            <circle cx="12" cy="12" r="4"/>
-                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-                        </svg>
-                        <span>@0o0orts</span>
+                    <span class="social-tooltip" aria-hidden="true">gmail</span>
+                </li>
+                <li>
+                    <a class="social-link" href="https://www.instagram.com/0o0orts/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @0o0orts">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
                     </a>
-                </p>
-            </div>
+                    <span class="social-tooltip" aria-hidden="true">instagram</span>
+                </li>
+                <li>
+                    <a class="social-link" href="https://www.facebook.com/0o0orts" target="_blank" rel="noopener noreferrer" aria-label="Facebook 0o0orts">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 22v-9h3l.5-4H14V7c0-1 .3-2 2-2h2V1.5C17 1.2 16 1 15 1c-3 0-5 2-5 5v3H7v4h3v9z"/></svg>
+                    </a>
+                    <span class="social-tooltip" aria-hidden="true">facebook</span>
+                </li>
+                <li>
+                    <a class="social-link" href="https://github.com/0o0christi" target="_blank" rel="noopener noreferrer" aria-label="GitHub 0o0christi">
+                        <svg class="contact-github-cat" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.3 29v-4.8c0-1.1.3-2  .7-2.7.4-.7.1-1.3-.7-1.5C6.2 18.5 4.5 16.1 4.5 11.8c0-2 .6-3.7 1.7-5.3-.5-1.8-.6-3.7 0-5.3 1.5-.1 3.5.8 5.3 2a18 18 0 0 1 9 0c1.8-1.2 3.8-2.1 5.3-2 .6 1.6.5 3.5 0 5.3 1.1 1.6 1.7 3.3 1.7 5.3 0 4.3-1.7 6.7-6.8 8.2-.8.2-1.1.8-.7 1.5.4.7.7 1.6.7 2.7V29M11.3 27.2C6 28.6 2.9 26.1 1 22.3"/></svg>
+                    </a>
+                    <span class="social-tooltip" aria-hidden="true">github</span>
+                </li>
+            </ul>
         </div>
 
     </main>

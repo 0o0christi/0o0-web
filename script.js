@@ -171,6 +171,7 @@ if (lightbox) {
     const closeButton = lightbox.querySelector(".lightbox-close");
 
     const paintings = document.querySelectorAll(".lightbox-trigger");
+    addGalleryNavigation(lightbox, lightboxImage, paintings, lightboxCaption);
 
     paintings.forEach((painting) => {
         painting.addEventListener("click", () => {
@@ -239,6 +240,7 @@ if (window.location.pathname.endsWith("printmaking.html")) {
     const closeButton = modal?.querySelector(".modal-close");
 
     if (modal && modalImage && closeButton) {
+        addGalleryNavigation(modal, modalImage, document.querySelectorAll(".artwork-image img"));
 
         document.querySelectorAll(".artwork-image img").forEach(img => {
 
@@ -286,6 +288,46 @@ if (logoButton) {
         logoSound.play().catch((error) => {
             console.warn("The logo sound could not play.", error);
         });
+    });
+}
+
+/* Browse the current gallery without closing its existing image popup. */
+function addGalleryNavigation(popup, image, thumbnails, caption) {
+    const items = Array.from(thumbnails);
+    if (items.length < 2) return;
+    let currentIndex = 0;
+    items.forEach((thumbnail, index) => {
+        thumbnail.addEventListener("click", () => { currentIndex = index; });
+    });
+
+    const isOpen = () => popup.classList.contains("lightbox")
+        ? popup.classList.contains("active") : !popup.hidden;
+
+    function showImage(direction) {
+        currentIndex = (currentIndex + direction + items.length) % items.length;
+        image.src = items[currentIndex].src;
+        image.alt = items[currentIndex].alt;
+        if (caption) caption.textContent = image.alt;
+    }
+
+    [-1, 1].forEach(direction => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "gallery-arrow " + (direction < 0 ? "gallery-arrow-prev" : "gallery-arrow-next");
+        button.setAttribute("aria-label", direction < 0 ? "Previous image" : "Next image");
+        button.innerHTML = direction < 0 ? "&#8249;" : "&#8250;";
+        button.addEventListener("click", event => {
+            event.stopPropagation();
+            showImage(direction);
+        });
+        popup.appendChild(button);
+    });
+
+    document.addEventListener("keydown", event => {
+        if (!isOpen() || event.altKey || event.ctrlKey || event.metaKey) return;
+        if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+        event.preventDefault();
+        showImage(event.key === "ArrowLeft" ? -1 : 1);
     });
 }
 
